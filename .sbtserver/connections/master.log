@@ -1,0 +1,65 @@
+New log file opened at Mon Aug 03 01:38:24 JST 2015 by 1976@USER-no-MacBook-Pro.local
+Taking next connection to: 50949
+New client attempting to connect on port: 50950-50949
+  Address = /192.168.1.15:50949
+This client on port 50950 has uuid c2be561c-cf94-4321-ad63-6c5b84a7de2c configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
+Connected Clients: activator-c2be561c-cf94-4321-ad63-6c5b84a7de2c
+Taking next connection to: 50949
+New client attempting to connect on port: 50951-50949
+  Address = /192.168.1.15:50949
+Handshake exception on socket: 50951
+sbt.impl.ipc.HandshakeException: Unable to perform handshake
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
+	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
+	at sbt.server.SbtServerSocketHandler$$anon$1.run(SbtServerSocketHandler.scala:43)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:209)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:265)
+	at java.io.DataInputStream.readInt(DataInputStream.java:387)
+	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
+	... 2 more
+Taking next connection to: 50949
+New client attempting to connect on port: 50952-50949
+  Address = /192.168.1.15:50949
+This client on port 50952 has uuid ea2dc39d-a174-4579-8eb7-24303c0c3d10 configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
+Connected Clients: activator-c2be561c-cf94-4321-ad63-6c5b84a7de2c, activator-ea2dc39d-a174-4579-8eb7-24303c0c3d10
+Taking next connection to: 50949
+Checking to see if clients are empty...
+We have 2 non-daemon clients, continuing serving connections.
+Taking next connection to: 50949
+Checking to see if clients are empty...
+We have 2 non-daemon clients, continuing serving connections.
+Taking next connection to: 50949
+Checking to see if clients are empty...
+We have 2 non-daemon clients, continuing serving connections.
+Taking next connection to: 50949
+Checking to see if clients are empty...
+We have 2 non-daemon clients, continuing serving connections.
+Taking next connection to: 50949
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 50949
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 50949
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 50949
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 50949
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 50949
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 50949
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 50949
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 50949
