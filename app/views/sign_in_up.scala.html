@@ -1,4 +1,4 @@
-@(action:Boolean, message : String) @* * true is sign up, and
+@(action:Boolean, msg : String) @* * true is sign up, and
 fals is sign in *@
 
 <div class='container'>
@@ -6,8 +6,12 @@ fals is sign in *@
 		<fieldset>
 			<legend>@if(action){ Sign up! }else{ Sign in! }</legend>
 			<div class="row">
-				<div class="col-lg-4 col-lg-offset-4">
-					<span class="label label-warning">@message</span>
+				<div class="col-lg-10 col-lg-offset-2">
+				<div class="col-lg-2">
+				</div>
+				<div class="col-lg-5">
+					<span class="label label-warning">@msg</span>
+				</div>				
 				</div>
 			</div>
 			<br>

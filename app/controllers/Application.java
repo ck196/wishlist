@@ -11,7 +11,7 @@ public class Application extends Controller {
     }
     
     public Result test(){
-    	Html content = sign_in_up.render(new Boolean(true),"");
+    	Html content = create_wish.render("");
     	return ok(main.render("home",content));
     }
 

@@ -34,4 +34,6 @@ public class User extends Model {
 	@Column(name="updated_at")
 	@UpdatedTimestamp
 	public Date updatedAt;
+	
+	public static Finder<Long, User> find = new Finder<>(User.class);
 }

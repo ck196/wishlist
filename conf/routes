@@ -4,8 +4,14 @@
 
 # Home page
 GET     /                           controllers.Application.index()
-GET     /signup                           controllers.SignUpController.signUpPage(msg : String ?= "")
-POST     /signup                           controllers.SignUpController.signUpAction()
+GET     /login                     	controllers.Login.login()
+POST    /login                    	controllers.Login.loginAction()
+GET     /signup                     controllers.SignUp.signUp()
+POST    /signup                    	controllers.SignUp.signUpAction()
+
+GET     /logout                     controllers.Login.logout()
+
+GET		/test                    	controllers.Application.test()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

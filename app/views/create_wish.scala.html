@@ -1,0 +1,26 @@
+@(title : String)
+<form method="get">
+<div class="container">
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="col-md-2">
+			<img id="img-click" src="@routes.Assets.versioned("images/index.svg")" alt="..."class="img-circle">
+		</div>
+		<div class="col-md-6">
+			<div class="form-group has-success">
+				<div class="input-group">
+					<span class="input-group-addon">Title</span> <input
+						class="form-control" name="title" type="text">
+				</div>
+			</div>
+			<textarea name="w-content" id="editor"></textarea>
+			<br> <br>
+			<div style="float: right">
+				<button type="submit" class="btn btn-default">Save wish</button>
+			</div>
+		</div>
+	</div>
+</div>
+<input name="image" id="input-img" type="file" style="visibility: hidden;" />
+</form>
+
