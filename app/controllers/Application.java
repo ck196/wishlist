@@ -1,6 +1,5 @@
 package controllers;
 
-import play.*;
 import play.mvc.*;
 import play.twirl.api.Html;
 import views.html.*;
@@ -12,7 +11,7 @@ public class Application extends Controller {
     }
     
     public Result test(){
-    	Html content = sign_in_up.render("Sign in!");
+    	Html content = sign_in_up.render(new Boolean(true),"");
     	return ok(main.render("home",content));
     }
 
