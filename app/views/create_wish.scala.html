@@ -6,7 +6,7 @@
 		<div class="col-md-2">
 			<img id="img-click" src="@routes.Assets.versioned("images/index.svg")" alt="..."class="img-circle">
 		</div>
-		<div class="col-md-6">
+		<div style="color: white;" class="col-md-6">
 			<div class="form-group has-success">
 				<div class="input-group">
 					<span class="input-group-addon">Title</span> <input
@@ -14,8 +14,28 @@
 				</div>
 			</div>
 			<textarea name="w-content" id="editor"></textarea>
-			<br> <br>
-			<div style="float: right">
+			 <div class="radio">
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="1" checked="">
+            Public
+          </label>
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios2" value="2">
+            Private
+          </label>
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios3" value="3">
+            Using password
+          </label>
+          <input class="hidden" type="password" name="password" id="inputPassword" placeholder="Password">
+        </div>
+        <div class="radio">
+          
+        </div>
+        <div class="radio">
+          
+        </div>
+			<div style="float: left">
 				<button type="submit" class="btn btn-default">Save wish</button>
 			</div>
 		</div>
@@ -23,4 +43,11 @@
 </div>
 <input name="image" id="input-img" type="file" style="visibility: hidden;" />
 </form>
-
+<script>
+$("#optionsRadios1,#optionsRadios2").click(function(){
+	$("#inputPassword").addClass('hidden');
+	});
+$('#optionsRadios3').click(function(){
+	$("#inputPassword").removeClass('hidden');
+});
+</script>

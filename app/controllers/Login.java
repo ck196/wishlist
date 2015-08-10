@@ -2,14 +2,9 @@ package controllers;
 
 import java.util.Map;
 
-import com.fasterxml.jackson.databind.JsonNode;
-
-import data.SignUpForm;
 import models.User;
-import play.Logger;
-import play.core.routing.Route;
-import play.data.Form;
-import play.mvc.*;
+import play.mvc.Controller;
+import play.mvc.Result;
 import play.twirl.api.Html;
 import utils.HashUtil;
 import views.html.*;

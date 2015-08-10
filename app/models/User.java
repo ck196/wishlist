@@ -1,12 +1,14 @@
 package models;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
 import com.avaje.ebean.Model;
@@ -35,5 +37,9 @@ public class User extends Model {
 	@UpdatedTimestamp
 	public Date updatedAt;
 	
+	@OneToMany(mappedBy = "creator")
+	List<Wish> wishes;
+	
 	public static Finder<Long, User> find = new Finder<>(User.class);
+	
 }

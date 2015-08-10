@@ -30,3 +30,8 @@ a.back {
 #content {
 	margin: 0 auto;
 }
+
+.item h2{
+	font-family: museo-slab, Georgia, "Times New Roman", Times, serif;
+	font-weight: bold;
+}
