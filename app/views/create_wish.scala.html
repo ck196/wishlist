@@ -4,7 +4,7 @@
 	<div class="row">
 		<div class="col-md-1"></div>
 		<div class="col-md-2">
-			<img id="img-click" src="@routes.Assets.versioned("images/index.svg")" alt="..."class="img-circle">
+			<img width=144px height=144px id="img-click" src="@routes.Assets.versioned("images/index.svg")" alt="..."class="img-circle">
 		</div>
 		<div style="color: white;" class="col-md-6">
 			<div class="form-group has-success">
@@ -41,8 +41,36 @@
 		</div>
 	</div>
 </div>
-<input name="image" id="input-img" type="file" style="visibility: hidden;" />
+
 </form>
+<form id="uploadimage" action="@routes.Upload.upload()" method="post" enctype="multipart/form-data">
+	<input name="image" id="input-img" type="file" style="visibility: hidden;" />
+</form>
+
+<script>
+
+$('#img-click').click(function() {
+    $('#input-img').click();
+    $('#input-img').change(function(){
+    	console.log("changed");
+    	var cur = $("#uploadimage")[0];
+		$.ajax({
+			url : "@routes.Upload.upload()",
+			type : "POST",
+			data : new FormData(cur),
+			contentType : false,
+			cache : false,
+			processData : false,
+			success : function(data) {
+				console.log("DATA:"+data);
+				$("#img-click").attr("src","@routes.Assets.versioned("")" + data);
+			}
+		});
+    });
+});
+
+</script>
+
 <script>
 $("#optionsRadios1,#optionsRadios2").click(function(){
 	$("#inputPassword").addClass('hidden');

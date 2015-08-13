@@ -1,12 +1,11 @@
 @(content: String)
-<div>
+<div class="container">
 @helper.form(action = routes.Upload.upload,  'enctype -> "multipart/form-data") {
     
-    <input type="file" name="picture">
+    <input type="file" name="image">
     
     <p>
         <input type="submit">
     </p>
     
 }
-</div>
