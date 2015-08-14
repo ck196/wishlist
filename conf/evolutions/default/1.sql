@@ -20,7 +20,9 @@ create table wish (
   is_public                 tinyint(1) default 0,
   is_mark                   tinyint(1) default 0,
   has_password              tinyint(1) default 0,
+  creator_id                bigint,
   password                  varchar(255),
+  img_link                  varchar(255),
   constraint pk_wish primary key (id))
 ;
 
@@ -30,8 +32,8 @@ create table wish_user (
   user_id                        bigint not null,
   constraint pk_wish_user primary key (wish_id, user_id))
 ;
-alter table wish add constraint fk_wish_creator_1 foreign key (id) references user (id) on delete restrict on update restrict;
-create index ix_wish_creator_1 on wish (id);
+alter table wish add constraint fk_wish_creator_1 foreign key (creator_id) references user (id) on delete restrict on update restrict;
+create index ix_wish_creator_1 on wish (creator_id);
 
 
 

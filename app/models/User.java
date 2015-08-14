@@ -14,9 +14,10 @@ import javax.validation.constraints.NotNull;
 import com.avaje.ebean.Model;
 import com.avaje.ebean.annotation.CreatedTimestamp;
 import com.avaje.ebean.annotation.UpdatedTimestamp;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
-@Entity(name = "wl_users")
+@Entity
 public class User extends Model {
 	
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -26,7 +27,7 @@ public class User extends Model {
 	@Column(unique = true)
 	public String username;
 	
-	@NotNull
+	@NotNull @JsonIgnore
 	public String password;
 	
 	@Column(name="created_at")

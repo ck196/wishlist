@@ -8,6 +8,7 @@ import play.twirl.api.Html;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Date;
 
 import com.google.common.io.Files;
 
@@ -30,13 +31,15 @@ public class Upload extends Controller {
 	        String contentType = picture.getContentType();
 	        Logger.info(contentType);
 	        File file = picture.getFile();
-	        File uploadFile = new File("public/upload/"+fileName);
+	        Date now = new Date();
+	        long timestamp = now.getTime();
+	        File uploadFile = new File("public/upload/"+timestamp+ "_" + fileName);
 	        try {
 				Files.copy(file, uploadFile);
 			} catch (IOException e) {				
 				e.printStackTrace();
 			}
-	        return ok("upload/"+fileName);
+	        return ok("upload/"+timestamp+ "_" + fileName);
 	    } else {
 	        flash("error", "Missing file");
 	        return badRequest();

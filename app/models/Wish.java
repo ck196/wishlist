@@ -13,8 +13,11 @@ import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
 import com.avaje.ebean.Model;
+import com.avaje.ebean.Model.Finder;
 
-@Entity(name="wl_wishes")
+import play.twirl.api.Html;
+
+@Entity
 public class Wish extends Model{
 	
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -33,11 +36,14 @@ public class Wish extends Model{
 	public boolean hasPassword;
 	
 	@ManyToOne
-	@JoinColumn(name="id")
 	public User creator;
 	
 	@ManyToMany
 	public List<User> viewable;
 	
 	public String password;
+	
+	public String imgLink;
+	
+	public static Finder<Long, Wish> find = new Finder<>(Wish.class);
 }

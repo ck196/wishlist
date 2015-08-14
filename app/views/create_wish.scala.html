@@ -1,33 +1,34 @@
 @(title : String)
-<form method="get">
+<form method="post" action="/create">
 <div class="container">
 	<div class="row">
 		<div class="col-md-1"></div>
 		<div class="col-md-2">
-			<img width=144px height=144px id="img-click" src="@routes.Assets.versioned("images/index.svg")" alt="..."class="img-circle">
+			<img width=144px height=144px id="img-click" src="@routes.Assets.versioned("images/octopi.png")" alt="..."class="img-rounded">
 		</div>
-		<div style="color: white;" class="col-md-6">
+		<input type="hidden" name='w-img' id='img-link' value="images/octopi.png">
+		<div class="col-md-6">
 			<div class="form-group has-success">
 				<div class="input-group">
 					<span class="input-group-addon">Title</span> <input
-						class="form-control" name="title" type="text">
+						class="form-control" name="w-title" type="text">
 				</div>
 			</div>
 			<textarea name="w-content" id="editor"></textarea>
 			 <div class="radio">
           <label>
-            <input type="radio" name="optionsRadios" id="optionsRadios1" value="1" checked="">
+            <input type="radio" name="w-rule" id="w-rule-01" value="1" checked="">
             Public
           </label>
           <label>
-            <input type="radio" name="optionsRadios" id="optionsRadios2" value="2">
+            <input type="radio" name="w-rule" id="w-rule-02" value="2">
             Private
           </label>
           <label>
-            <input type="radio" name="optionsRadios" id="optionsRadios3" value="3">
+            <input type="radio" name="w-rule" id="w-rule-03" value="3">
             Using password
           </label>
-          <input class="hidden" type="password" name="password" id="inputPassword" placeholder="Password">
+          <input class="hidden" type="password" name="w-password" id="inputPassword" placeholder="Password">
         </div>
         <div class="radio">
           
@@ -64,6 +65,7 @@ $('#img-click').click(function() {
 			success : function(data) {
 				console.log("DATA:"+data);
 				$("#img-click").attr("src","@routes.Assets.versioned("")" + data);
+				$("#img-link").val("@routes.Assets.versioned("")" + data);
 			}
 		});
     });
@@ -72,10 +74,10 @@ $('#img-click').click(function() {
 </script>
 
 <script>
-$("#optionsRadios1,#optionsRadios2").click(function(){
+$("#w-rule-01,#wl-rule-02").click(function(){
 	$("#inputPassword").addClass('hidden');
 	});
-$('#optionsRadios3').click(function(){
+$('#w-rule-03').click(function(){
 	$("#inputPassword").removeClass('hidden');
 });
 </script>
