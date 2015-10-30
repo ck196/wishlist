@@ -2,42 +2,38 @@
 <form method="post" action="/create">
 <div class="container">
 	<div class="row">
-		<div class="col-md-1"></div>
-		<div class="col-md-2">
-			<img width=144px height=144px id="img-click" src="@routes.Assets.versioned("images/octopi.png")" alt="..."class="img-rounded">
+		<div class="col-md-1">
+			
 		</div>
+		<!-- 
+		<div class="col-md-2">
+			<img width=144px height=144px id="img-click" src="@routes.Assets.versioned("images/index.svg")" alt="..."class="img-rounded">
+		</div>
+		
 		<input type="hidden" name='w-img' id='img-link' value="images/octopi.png">
-		<div class="col-md-6">
-			<div class="form-group has-success">
-				<div class="input-group">
-					<span class="input-group-addon">Title</span> <input
-						class="form-control" name="w-title" type="text">
+		 -->
+		<div class="col-md-9 col-xs-9">
+			<h2 class='wtitle'>This is title...</h2>
+			<div style="padding-left:20px;">
+				<div id="editor"></div>		
+				 <div class="radio">
+		          <label>
+		            <input type="radio" name="w-rule" id="w-rule-01" value="1" checked="">
+		            Public
+		          </label>
+		          <label>
+		            <input type="radio" name="w-rule" id="w-rule-02" value="2">
+		            Private
+		          </label>
+		          <label>
+		            <input type="radio" name="w-rule" id="w-rule-03" value="3">
+		            Using password
+		          </label>
+		          <input class="hidden" type="password" name="w-password" id="inputPassword" placeholder="Password">
+	        	</div>
+				<div style="float: left">
+					<button type="submit" class="btn btn-default">Save wish</button>
 				</div>
-			</div>
-			<textarea name="w-content" id="editor"></textarea>
-			 <div class="radio">
-          <label>
-            <input type="radio" name="w-rule" id="w-rule-01" value="1" checked="">
-            Public
-          </label>
-          <label>
-            <input type="radio" name="w-rule" id="w-rule-02" value="2">
-            Private
-          </label>
-          <label>
-            <input type="radio" name="w-rule" id="w-rule-03" value="3">
-            Using password
-          </label>
-          <input class="hidden" type="password" name="w-password" id="inputPassword" placeholder="Password">
-        </div>
-        <div class="radio">
-          
-        </div>
-        <div class="radio">
-          
-        </div>
-			<div style="float: left">
-				<button type="submit" class="btn btn-default">Save wish</button>
 			</div>
 		</div>
 	</div>
@@ -49,7 +45,7 @@
 </form>
 
 <script>
-
+/*
 $('#img-click').click(function() {
     $('#input-img').click();
     $('#input-img').change(function(){
@@ -70,7 +66,7 @@ $('#img-click').click(function() {
 		});
     });
 });
-
+*/
 </script>
 
 <script>
@@ -81,3 +77,19 @@ $('#w-rule-03').click(function(){
 	$("#inputPassword").removeClass('hidden');
 });
 </script>
+<script>
+$(document).ready(function() {
+	$('#editor').summernote({
+		  height: 200,                 // set editor height
+		  
+		  minHeight: null,             // set minimum height of editor
+		  maxHeight: null,             // set maximum height of editor
+
+		  focus: true,                 // set focus to editable area after initializing summernote
+		});
+	});
+$('.wtitle').summernote({
+	  airMode: true
+	});
+</script>
+

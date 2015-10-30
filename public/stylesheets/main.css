@@ -5,7 +5,7 @@
 
 body {
 	font-family: Arial;
-	background: #fff url(../images/world.jpg) no-repeat top left;
+	/*background: #fff url(../images/world.jpg) no-repeat top left;*/
 }
 
 .title {
@@ -34,4 +34,25 @@ a.back {
 .item h2{
 	font-family: museo-slab, Georgia, "Times New Roman", Times, serif;
 	font-weight: bold;
+}
+
+#leftmenu{
+	position: fixed;
+	top: 40px;
+	width: 65px;
+	height: 90%;
+	background: #EEEEEE;
+}
+
+#main{
+	padding-left: 70px;
+	width:90%;
+}
+
+.lst-item{
+	//background: #E8E8E8;
+}
+
+ul,ol{
+	margin-left: 10px;
 }
